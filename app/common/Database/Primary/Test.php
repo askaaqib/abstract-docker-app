@@ -3,20 +3,17 @@ declare(strict_types=1);
 
 namespace App\Common\Database\Primary;
 
+
 use App\Common\Database\AbstractAppTable;
-use App\Common\Exception\AppException;
+
 use App\Common\Kernel;
-use App\Common\Users\User;
 use Comely\Database\Exception\ORM_ModelNotFoundException;
 use Comely\Database\Schema\Table\Columns;
 use Comely\Database\Schema\Table\Constraints;
 
-/**
- * Class Users
- * @package App\Common\Database\Primary
- */
 class Test extends AbstractAppTable
 {
+
     public const NAME = 'test';
     public const MODEL = 'App\Common\Test';
 
@@ -24,9 +21,10 @@ class Test extends AbstractAppTable
      * @param Columns $cols
      * @param Constraints $constraints
      */
-    public function structure(Columns $cols, Constraints $constraints): void
+
+    public function structure(Columns $cols,Constraints $constraints ): void
     {
-        $cols->int("id")->bytes(4)->unSigned()->autoIncrement();
+        $cols->int('id')->bytes(4)->Unsigned()->autoIncrement();
         $cols->string('book_name')->length(32)->nullable();
         $cols->string('author')->length(32)->nullable();
         $cols->string("email")->length(32)->unique();
