@@ -1,3 +1,4 @@
+<?php echo 'Hello'; ?>
 {knit "header"}
 <div class="row">
     <div class="col-12">
